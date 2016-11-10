@@ -31,7 +31,8 @@
 		];
 
 		vm.expandDetails = function() {
-			accounts.shown = ! accounts.shown;
+			accounts.shown = !accounts.shown;
+			console.log("called expand details");
 
 		};	
 
