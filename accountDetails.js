@@ -20,6 +20,6 @@ angular.module("accountsViewer").component("accountDetails", {
     bindings: {
 		accounts: '<'
 
-	} 
+	}
 
 });

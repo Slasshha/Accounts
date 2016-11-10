@@ -1,25 +1,36 @@
 angular.module("accountsViewer").component("accountsList", {
 
-	/*
-	templateUrl: "accounts_list.html",
-	bindings: {
-		accounts: '<'
 
-	} */
-
-
-	template: '<div class="list-container">\
-    <ul class="accounts-list">\
-            <li ng-repeat="item in $ctrl.accounts" class="accounts-item" style="margin: 20px" ng-click="$ctrl.expandDetails()">\
-        	<div><img ng-src="{{item.avatarUrl}}" width="75px"> Account ID: {{item.accountId}} Email: {{item.email}} Login: {{item.login}} Name: {{item.name}}  </div>\
-        	<div class="accountDetails" ng-if="item.shown"> Age: {{item.age}}  Gender: {{item.gender}}  Phone number: {{item.phone}} </div>\
-        	</li>\
-    </ul>\
-</div>',
+	template: `
+		<div class="list-container">
+			<div class="accounts-list">
+            	<accounts-list-item
+            		ng-repeat="account in $ctrl.accounts"
+            		account="account"
+            		show-details="$ctrl.shouldShowDetails(account)"
+            		ng-click="$ctrl.expandDetails(account)"
+            	></account-list-item>
+    		</div>
+		</div>
+	`,
 
     bindings: {
-		accounts: '<',
-		expandDetails: '&'
-	} 
+		accounts: '<'
+	},
 
+	controller: function AccountsListController() {
+		var $ctrl = this;
+
+		$ctrl.activeAccountId = null;
+
+		$ctrl.expandDetails = function (account) {
+			console.log("click done");
+			$ctrl.activeAccountId = account.accountId;
+
+		};
+
+		$ctrl.shouldShowDetails = function (account) {
+			return account.accountId === $ctrl.activeAccountId;
+		};
+	}
 });

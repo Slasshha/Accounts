@@ -12,21 +12,21 @@
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="script.js"></script>
+  <script src="accountsList.js"></script>
+  <script src="accountsListItem.js"></script>
 
-  <script src="accountsList.js"></script> 
-  
 </head>
 
 <body ng-controller="MainController as vm">
   <h1 class="title">Accounts List</h1>
 
   <accounts-list accounts="vm.accounts"/>
-  
+
   <!--  <account-details details="vm.acountDetails" ng-if="vm.itemShown"/> -->
 
 
 
-<!-- 
+<!--
   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
@@ -39,7 +39,7 @@
     </div>
     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
       <div class="panel-body">
-        <ul> 
+        <ul>
           <li>age </li>
           <li>gender </li>
           <li>phone number </li>
@@ -58,7 +58,7 @@
     </div>
     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
       <div class="panel-body">
-       <ul> 
+       <ul>
           <li>age </li>
           <li>gender </li>
           <li>phone number </li>
@@ -77,7 +77,7 @@
     </div>
     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body">
-         <ul> 
+         <ul>
           <li>age </li>
           <li>gender </li>
           <li>phone number </li>
