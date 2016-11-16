@@ -31,7 +31,8 @@ angular.module("accountsViewer").component("accountsList", {
 				$ctrl.activeAccountId = null;
 			} else {
 				$ctrl.activeAccountId = account.accountId;
-				console.log("not same")};
+				console.log("not same")
+			   };
 
 		};
 
