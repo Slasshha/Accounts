@@ -28,12 +28,10 @@
 
 		var vm = this;
 
-		accountsService.getAccounts.then(function (accounts) {
+		accountsService.getAccounts().then(function (accounts) {
 			vm.accounts = accounts;
 		});
 
-
-		console.log(accounts);
 	};
 
 	app.constant('hardcodedAccounts', [

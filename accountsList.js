@@ -26,12 +26,10 @@ angular.module("accountsViewer").component("accountsList", {
 		$ctrl.expandDetails = function (account) {
 			console.log("click done");
 			if (account.accountId===$ctrl.activeAccountId) {
-				console.log("they are equal");
-				console.log($ctrl.activeAccountId);
 				$ctrl.activeAccountId = null;
 			} else {
 				$ctrl.activeAccountId = account.accountId;
-				console.log("not same")
+
 			   };
 
 		};
