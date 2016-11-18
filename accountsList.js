@@ -9,7 +9,10 @@ angular.module("accountsViewer").component("accountsList", {
             		account="account"
             		show-details="$ctrl.shouldShowDetails(account)"
             		ng-click="$ctrl.expandDetails(account)"
-            	></account-list-item>
+            	>
+            	    <button type="button" class="btn btn-primary update" ng-click="$ctrl.updateAccount(account)">Update</button>
+
+            	</account-list-item>
     		</div>
 		</div>
 	`,
@@ -28,13 +31,16 @@ angular.module("accountsViewer").component("accountsList", {
 				$ctrl.activeAccountId = null;
 			} else {
 				$ctrl.activeAccountId = account.accountId;
-
-			  };
+       		};
 
 		};
 
 		$ctrl.shouldShowDetails = function (account) {
 			return account.accountId === $ctrl.activeAccountId;
+		};
+
+		$ctrl.updateAccount = function (account) {
+			$ctrl.modifyAccount = true;
 		};
 	}
 });

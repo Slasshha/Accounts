@@ -22,11 +22,13 @@
 <body ng-controller="MainController as vm">
   <h1 class="title">Accounts List</h1>
 
-  <accounts-list accounts="vm.accounts"/>
+  <accounts-list accounts="vm.accounts"> </accounts-list>
 
-  <button class="add">ADD</button>
+  <div>
+    <button type="button" class="btn btn-primary add" ng-click="$ctrl.showPopup()">ADD</button>
+  </div>
 
-  <accounts-popup />
+  <accounts-popup accounts="vm.accounts"/>
 
 
   <!--  <account-details details="vm.acountDetails" ng-if="vm.itemShown"/> -->

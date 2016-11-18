@@ -13,17 +13,20 @@ angular.module("accountsViewer").component("accountsPopup", {
                     <div class="modal-body">
                         <form>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="InputEmail" placeholder="Email">
+                                <label for="userName">Name</label>
+                                <input type="text" class="form-control" id="userName" placeholder="Name">
 
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="InputEmail" placeholder="Email">
+                                <label for="userAge">Age</label>
+                                <select class="form-control" id="userAge" placeholder="Age">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
 
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="InputEmail" placeholder="Email">
+                                <label for="userGender">Gender</label>
+                                <input type="email" class="form-control" id="userGender" placeholder="Gender">
 
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="InputEmail" placeholder="Email">
+                                <label for="inputEmail">Email address</label>
+                                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
                             </div>
                         </form>
                     </div>
@@ -41,19 +44,11 @@ angular.module("accountsViewer").component("accountsPopup", {
 		accounts: '<'
 	},
 
-	controller: function AccountsListController() {
+	controller: function AccountsActionsController() {
 		var $ctrl = this;
 
-		$ctrl.activeAccountId = null;
-
-		$ctrl.expandDetails = function (account) {
-				if (account.accountId===$ctrl.activeAccountId) {
-				$ctrl.activeAccountId = null;
-			} else {
-				$ctrl.activeAccountId = account.accountId;
-
-			  };
-
+		$ctrl.showPopup = function () {
+				$ctrl.createAccount = true;
 		};
 
 		$ctrl.shouldShowDetails = function (account) {
