@@ -13,7 +13,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="script.js"></script>
   <script src="accountsList.js"></script>
-  <script src="accountsPopup.js"></script>
+  <script src="accountFormPopup.js"></script>
   <script src="accountsListItem.js"></script>
   <script src="accountsService.js"></script>
 
@@ -25,10 +25,10 @@
   <accounts-list accounts="vm.accounts"> </accounts-list>
 
   <div>
-    <button type="button" class="btn btn-primary add" ng-click="$ctrl.showPopup()">ADD</button>
+    <button type="button" class="btn btn-primary add" ng-click="vm.showAddNewAccountPopup()">ADD</button>
   </div>
 
-  <accounts-popup accounts="vm.accounts"/>
+  <account-form-popup show="vm.showAccountsPopup" account="vm.newAccount" on-submit="vm.addNewAccount()"/>
 
 
   <!--  <account-details details="vm.acountDetails" ng-if="vm.itemShown"/> -->

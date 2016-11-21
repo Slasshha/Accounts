@@ -9,3 +9,7 @@
 .add {
 	margin: 0 auto;
 }
+
+.modal.open {
+	display: block;
+}
