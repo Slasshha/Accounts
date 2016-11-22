@@ -2,7 +2,7 @@
 (function() {
 	var app = angular.module("accountsViewer",[]);
 
-	var MainController = function($scope, $q, accountsService) {
+	var MainController = function($scope, $http, accountsService) {
 		var vm = this;
 
 		vm.showAccountsPopup = false;
@@ -24,7 +24,7 @@
 	};
 
 
-app.controller("MainController", ["$scope", "$q", "accountsService", MainController]);
+app.controller("MainController", ["$scope", "$http", "accountsService", MainController]);
 
 
 }());

@@ -29,11 +29,12 @@
 	]);
 
 
-	module.service('accountsService', ['$q', 'hardcodedAccounts', function($q, hardcodedAccounts) {
+	module.service('accountsService', ['$http', 'accountsEndpoint', function($http, accountsEndpoint) {
 		this.getAccounts = function() {
-			let defer = $q.defer();
-            defer.resolve(hardcodedAccounts);
-            return defer.promise;
+			return $http.get(accountsEndpoint.endpoint)
+			    .then(function(response) {
+			    	return response.data;
+			    });
 		};
 	}]);
 }());
