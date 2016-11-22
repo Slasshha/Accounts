@@ -9,7 +9,7 @@
 		vm.newAccount = null;
 
 		accountsService.getAccounts().then(function (accounts) {
-			vm.accounts = accounts;
+			vm.accounts = accounts.data;
 			console.log(accounts);
 		});
 
