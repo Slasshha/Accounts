@@ -24,17 +24,14 @@
 
 	]);
 
-    module.constant('accountsEndpoint', [
+    module.constant('accountsEndpoint',
 		    {"endpoint": 'http://localhost:1337/account'}
-	]);
+	);
 
 
 	module.service('accountsService', ['$http', 'accountsEndpoint', function($http, accountsEndpoint) {
 		this.getAccounts = function() {
-			return $http.get(accountsEndpoint.endpoint)
-			    .then(function(response) {
-			    	return response.data;
-			    });
+			return $http.get(accountsEndpoint.endpoint);
 		};
 	}]);
 }());

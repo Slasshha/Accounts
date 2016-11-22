@@ -7,7 +7,7 @@ angular.module("accountsViewer").component("accountsListItem", {
                 Account ID: {{$ctrl.account.accountId}}
                 Email: {{$ctrl.account.email}}
                 Login: {{$ctrl.account.login}}
-                Name: {{$ctrl.account.name}}
+                Name: {{accounts.name}}
             </div>
 
             <div class="accountDetails" ng-if="$ctrl.showDetails">

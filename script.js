@@ -10,6 +10,7 @@
 
 		accountsService.getAccounts().then(function (accounts) {
 			vm.accounts = accounts;
+			console.log(accounts);
 		});
 
 		vm.showAddNewAccountPopup = function () {
