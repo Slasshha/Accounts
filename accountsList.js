@@ -27,16 +27,16 @@ angular.module("accountsViewer").component("accountsList", {
 		$ctrl.activeAccountId = null;
 
 		$ctrl.expandDetails = function (account) {
-				if (account.accountId===$ctrl.activeAccountId) {
+				if (account.id===$ctrl.activeAccountId) {
 				$ctrl.activeAccountId = null;
 			} else {
-				$ctrl.activeAccountId = account.accountId;
+				$ctrl.activeAccountId = account.id;
+				console.log(account);
        		};
-
 		};
 
 		$ctrl.shouldShowDetails = function (account) {
-			return account.accountId === $ctrl.activeAccountId;
+			return account.id === $ctrl.activeAccountId;
 		};
 
 		$ctrl.updateAccount = function (account) {
