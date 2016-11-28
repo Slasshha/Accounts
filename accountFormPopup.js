@@ -35,7 +35,7 @@ angular.module("accountsViewer").component("accountFormPopup", {
 	                        </div>
 	                    </div>
 	                    <div class="modal-footer">
-	                        <button type="submit" class="btn btn-primary" ng-disabled="accountForm.$invalid" ng-click="$ctrl.showAddNewAccountPopup()">Save account</button>
+	                        <button type="submit" class="btn btn-primary" ng-disabled="accountForm.$invalid" ng-click="$ctrl.onSubmit($ctrl.account)">Save account</button>
 	                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="$ctrl.hidePopup()">Close</button>
 	                    </div>
                     </form>

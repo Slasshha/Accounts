@@ -30,9 +30,10 @@
 			console.log($scope.phone);
 		};
 
-		vm.addNewAccount = function ($http, accountsEndpoint) {
+		vm.addNewAccount = function () {
 			console.log("add new acc", vm.newAccount);
-			$http.post(accountsEndpoint.endpoint, vm.newAccount);
+
+			accountsService.addAccount(vm.newAccount);
 		};
 	};
 
