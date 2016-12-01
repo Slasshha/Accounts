@@ -1,10 +1,11 @@
 .accounts-list {
-	list-style-type: none ;
-},
+	list-style-type: none;
+
+}
 
 .accounts-item {
-	margin: 20px;
-},
+	margin: 20px 25px;
+}
 
 .add {
 	margin: 0 auto;
@@ -12,4 +13,21 @@
 
 .modal.open {
 	display: block;
+}
+
+.update, .delete {
+	margin: 20px;
+}
+
+.account-info {
+	padding: 10px;
+	margin: 20px;
+}
+
+.userpic {
+	margin: 20px;
+}
+
+.userpic-container {
+	padding-left: 40px;
 }

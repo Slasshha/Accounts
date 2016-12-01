@@ -3,6 +3,8 @@
 
 <head>
   <script data-require="angular.js@2.0.0" data-semver="1.5.5" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
   <script
   src="https://code.jquery.com/jquery-3.1.1.js"
   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
@@ -25,80 +27,10 @@
   <accounts-list accounts="vm.accounts"> </accounts-list>
 
   <div>
-    <button type="button" class="btn btn-primary add" ng-click="vm.showAddNewAccountPopup()">ADD</button>
+    <button type="button" class="btn btn-primary add" ng-click="vm.showAddNewAccountPopup()">ADD NEW ACCOUNT</button>
   </div>
 
   <account-form-popup show="vm.showAccountsPopup" account="vm.newAccount" on-submit="vm.addNewAccount()"/>
-
-
-  <!--  <account-details details="vm.acountDetails" ng-if="vm.itemShown"/> -->
-
-
-
-<!--
-  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingOne">
-      <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          <img src="" alt="avatar">
-          <span>id</span> <span>login</span> <span>name </span> <span> email </span>
-        </a>
-      </h4>
-    </div>
-    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-      <div class="panel-body">
-        <ul>
-          <li>age </li>
-          <li>gender </li>
-          <li>phone number </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingTwo">
-      <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          <img src="" alt="avatar">
-          <span>id</span> <span>login</span> <span>name </span> <span> email </span>
-        </a>
-      </h4>
-    </div>
-    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-      <div class="panel-body">
-       <ul>
-          <li>age </li>
-          <li>gender </li>
-          <li>phone number </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingThree">
-      <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          <img src="" alt="avatar">
-          <span>id</span> <span>login</span> <span>name </span> <span> email </span>
-        </a>
-      </h4>
-    </div>
-    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-      <div class="panel-body">
-         <ul>
-          <li>age </li>
-          <li>gender </li>
-          <li>phone number </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
--->
-
-
 </body>
 
 </html>

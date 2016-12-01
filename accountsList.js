@@ -10,8 +10,7 @@ angular.module("accountsViewer").component("accountsList", {
             		show-details="$ctrl.shouldShowDetails(account)"
             		ng-click="$ctrl.expandDetails(account)"
             	>
-            	    <button type="button" class="btn btn-primary update" ng-click="$ctrl.updateAccount(account)">Update</button>
-
+            	<button type="button" class="btn btn-primary update" ng-click="$ctrl.updateAccount(account)">Update</button>
             	</account-list-item>
     		</div>
 		</div>
