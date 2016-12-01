@@ -26,7 +26,7 @@ angular.module("accountsViewer").component("accountFormPopup", {
 	                            	required
 	                            	minlength="3"
 	                            	pattern="[a-zA-Z\s]+"
-	                            />
+	                            >
 
 								<div ng-messages="$ctrl.accountForm.userName.$error" class="help-block">
 									<div ng-message="minlength">Name should have at least 3 characters.</div>
@@ -49,35 +49,89 @@ angular.module("accountsViewer").component("accountFormPopup", {
 	                                ng-model="$ctrl.account.age"
 	                                ng-model-options="{updateOn: 'blur'}"
 	                                required
-	                            />
+	                            >
 
-	                            <div ng-if="$ctrl.accountForm.age.$error.required" class="help-block">Age is required.</div>
-	                            <div ng-if="$ctrl.accountForm.age.$error.min" class="help-block">Age should be greater than 18.</div>
-	                            <div ng-if="$ctrl.accountForm.age.$error.max" class="help-block">Age should be less than 100.</div>
-	                            <div ng-if="$ctrl.accountForm.age.$error.number" class="help-block">Age should a number.</div>
+	                            <div ng-if="$ctrl.accountForm.age.$dirty">
+	                                <div ng-if="$ctrl.accountForm.age.$error.required" class="help-block">Age is required.</div>
+	                                <div ng-if="$ctrl.accountForm.age.$error.min" class="help-block">Age should be greater than 18.</div>
+	                                <div ng-if="$ctrl.accountForm.age.$error.max" class="help-block">Age should be less than 100.</div>
+	                                <div ng-if="$ctrl.accountForm.age.$error.number" class="help-block">Age should be a number.</div>
+	                            </div>
 	                        </div>
 
-	                        <div class="form-group">
+	                        <div class="form-group" ng-class="{'has-error': $ctrl.accountForm.gender.$invalid && $ctrl.accountForm.gender.$dirty}">
 	                            <label for="userGender">Gender</label>
-	                            <select class="form-control" id="userGender" placeholder="Gender" ng-model="$ctrl.account.gender">
+	                            <select
+	                            	class="form-control"
+	                            	id="userGender"
+	                            	name="gender"
+	                            	placeholder="Gender"
+	                            	ng-model="$ctrl.account.gender"
+	                            	ng-model-options="{updateOn: 'blur'}"
+	                            	required>
 	                                <option value="male">Male</option>
 	                                <option value="female">Female</option>
 	                            </select>
+	                            <div ng-if="$ctrl.accountForm.gender.$dirty">
+	                            	<div ng-if="$ctrl.accountForm.gender.$error.required" class="help-block">Gender should be indicated.</div>
+	                            </div>
 	                        </div>
 
-	                        <div class="form-group">
+	                        <div class="form-group" ng-class="{'has-error': $ctrl.accountForm.phoneNumber.$invalid && $ctrl.accountForm.phoneNumber.$dirty}">
 	                            <label for="phoneNumber">Phone number</label>
-	                            <input type="text" class="form-control" id="phoneNumber" placeholder="Phone number" ng-model="$ctrl.account.phoneNumber">
+	                            <input
+	                                type="text"
+	                                class="form-control"
+	                                id="phoneNumber"
+	                                name="phoneNumber"
+	                                placeholder="Phone number"
+	                                ng-model="$ctrl.account.phoneNumber"
+	                                ng-model-options="{updateOn: 'blur'}"
+	                                minlength="9"
+	                            	required
+	                            />
+
+	                            <div ng-messages="$ctrl.accountForm.phoneNumber.$error" class="help-block">
+									<div ng-message="minlength">Phone number should contain at least 9 digits.</div>
+									<div ng-message="pattern">Phone number should contain 10 digits.</div>
+								</div>
 	                        </div>
 
-	                        <div class="form-group">
+	                        <div class="form-group" ng-class="{'has-error': $ctrl.accountForm.email.$invalid && $ctrl.accountForm.email.$dirty}">
 	                            <label for="inputEmail">Email address</label>
-	                            <input type="email" class="form-control" id="inputEmail" placeholder="Email" ng-model="$ctrl.account.email">
+	                            <input
+	                                type="email"
+	                                class="form-control"
+	                                id="inputEmail"
+	                                placeholder="Email"
+	                                name="email"
+	                                ng-model="$ctrl.account.email"
+	                                required>
+	                            <div ng-messages="$ctrl.accountForm.email.$error" class="help-block">
+									<div ng-message="minlength">Name should have at least 3 characters.</div>
+									<div ng-message="pattern">Name should have only letters.</div>
+								</div>
 	                        </div>
 
-	                        <div class="form-group">
+	                        <div class="form-group" ng-class="{'has-error': $ctrl.accountForm.login.$invalid && $ctrl.accountForm.login.$dirty}">
 	                            <label for="userLogin">Login</label>
-	                            <input type="text" class="form-control" id="userLogin" placeholder="Login" ng-model="$ctrl.account.login">
+	                            <input
+	                                type="text"
+	                                class="form-control"
+	                                id="userLogin"
+	                                name="login"
+	                                placeholder="Login"
+	                                ng-model="$ctrl.account.login"
+	                                minlength="5"
+	                                maxlength="15"
+	                                ng-model-options="{updateOn: 'blur'}"
+	                                required
+	                            >
+	                            <div ng-messages="$ctrl.accountForm.login.$error" ng-if="$ctrl.accountForm.login.$dirty" class="help-block">
+	                                <div ng-message="required">Login is a mandatory field.</div>
+									<div ng-message="minlength">Login should have at least 5 characters.</div>
+									<div ng-message="maxlength">Login should have not more than 5 characters.</div>
+								</div>
 	                        </div>
 	                    </div>
 	                    <div class="modal-footer">
