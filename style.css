@@ -16,10 +16,11 @@
 }
 
 .update, .delete {
-	padding: 20px;
+	margin: 20px;
 }
 
 .account-info {
+	padding: 10px;
 	margin: 20px;
 }
 
@@ -29,5 +30,4 @@
 
 .userpic-container {
 	padding-left: 40px;
-	margin: 20px;
 }
