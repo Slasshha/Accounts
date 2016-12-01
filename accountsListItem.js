@@ -5,7 +5,7 @@ angular.module("accountsViewer").component("accountsListItem", {
             <div class="userpic-container col-md-2">
                 <img class="userpic" ng-src="{{$ctrl.account.avatarUrl}}" width="75px">
             </div>
-            <div class="col-md-7">
+            <div class="col-md-6">
                 <div class="account-info">
                     Account ID: {{$ctrl.account.accountId}}
                     Email: {{$ctrl.account.email}}
@@ -18,7 +18,7 @@ angular.module("accountsViewer").component("accountsListItem", {
                     Phone number: {{$ctrl.account.phoneNumber}}
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <button type="button" class="btn btn-primary update" ng-click="$ctrl.updateAccount(account)">Update</button>
                 <button type="button" class="btn btn-primary delete md-primary md-raised" ng-click="showConfirm($event)">Delete</button>
             </div>
