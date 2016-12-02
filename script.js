@@ -1,8 +1,8 @@
 
 (function() {
-	var app = angular.module("accountsViewer",['ngMessages']);
+	var app = angular.module("accountsViewer",['ngMessages', 'ngMaterial']);
 
-	var MainController = function($scope, $http, accountsService) {
+	var MainController = function($scope, $http, $mdDialog, accountsService) {
 		var vm = this;
 
 		vm.showAccountsPopup = false;
@@ -48,7 +48,7 @@
 			               });
 		};
 
-		/*vm.showConfirm = function(ev) {
+		vm.showConfirm = function(accountId) {
     // Appending dialog to document.body to cover sidenav in docs app
 		    var confirm = $mdDialog.confirm()
 		          .title('Deleting account')
@@ -57,12 +57,22 @@
 		          .targetEvent(ev)
 		          .ok('Yes')
 		          .cancel('No');
-	    }; */
+
+		    $mdDialog.show(confirm).then(function() {
+			  accountsService.deleteAccount(accountId);
+			}, function() {
+			  $scope.status = 'You decided to keep your debt.';
+			});
+	    };
+
+
+
+
 
 	};
 
 
-app.controller("MainController", ["$scope", "$http", "accountsService", MainController]);
+app.controller("MainController", ["$scope", "$http", "$mdDialog", "accountsService", MainController]);
 
 
 }());

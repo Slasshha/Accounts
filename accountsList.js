@@ -2,22 +2,26 @@ angular.module("accountsViewer").component("accountsList", {
 
 
 	template: `
-		<div class="list-container">
-			<div class="accounts-list">
-            	<accounts-list-item
-            		ng-repeat="account in $ctrl.accounts"
-            		account="account"
-            		show-details="$ctrl.shouldShowDetails(account)"
-            		ng-click="$ctrl.expandDetails(account)"
-            	>
-            	<button type="button" class="btn btn-primary update" ng-click="$ctrl.updateAccount(account)">Update</button>
-            	</account-list-item>
-    		</div>
+		<div class="panel-group">
+			<div class="list-container panel-success">
+				<div class="accounts-list panel-body">
+	            	<accounts-list-item
+	            		ng-repeat="account in $ctrl.accounts"
+	            		account="account"
+	            		show-confirm="$ctrl.showConfirm(account.id)"
+	            		show-details="$ctrl.shouldShowDetails(account)"
+	            		ng-click="$ctrl.expandDetails(account)"
+	            	>
+	            	<button type="button" class="btn btn-primary update" ng-click="$ctrl.updateAccount(account)">Update</button>
+	            	</account-list-item>
+	    		</div>
+			</div>
 		</div>
 	`,
 
     bindings: {
-		accounts: '<'
+		accounts: '<',
+		showConfirm: '&'
 	},
 
 	controller: function AccountsListController() {

@@ -15,6 +15,11 @@
 		this.addAccount = function(newAccount) {
 			return $http.post(accountsEndpoint.endpoint, newAccount);
 		};
+
+		this.deleteAccount = function(accountId) {
+			console.log('trying to delete ' + accountId);
+			return $http.delete(accountsEndpoint.endpoint + '/'  + accountId);
+		};
 	}]);
 
 
